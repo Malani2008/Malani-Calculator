@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+body.light-mode {
+    background: #FFFFFF;
+}
+
+body.dark-mode {
+    background: #09090B;
+}
+
+.calculator {
+    width: 350px;
+    padding: 30px 22px;
+    border-radius: 30px;
+    background: #F8F5FF;
+    position: relative;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+body.dark-mode .calculator {
+    background: #211A2E;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    color: #4056A1;
+    margin: 10px 0 35px;
+}
+
+body.dark-mode h1 {
+    color: #C7B5FF;
+}
+
+#themeToggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: #E5E0F5;
+    font-size: 19px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.display {
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#previous {
+    font-size: 18px;
+    color: #888;
+    min-height: 25px;
+}
+
+#result {
+    font-size: 45px;
+    color: #303F75;
+    word-break: break-all;
+}
+
+body.dark-mode #result,
+body.dark-mode #previous {
+    color: white;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.buttons button {
+    width: 100%;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    font-size: 21px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.buttons button:hover {
+    transform: scale(1.07);
+}
+
+.number {
+    background: #4056A1;
+    color: white;
+}
+
+.function {
+    background: #E7EBF5;
+    color: #4056A1;
+}
+
+.operator {
+    background: #E7EBF5;
+    color: #4056A1;
+}
+
+.equal {
+    background: #879CEB;
+    color: white;
+}
+
+body.dark-mode .number {
+    background: #6552A5;
+}
+
+body.dark-mode .function,
+body.dark-mode .operator {
+    background: #392F4D;
+    color: white;
+}
+
+body.dark-mode .equal {
+    background: #8872D6;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        width: 90%;
+        max-width: 350px;
+        padding: 25px 18px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    .buttons button {
+        font-size: 18px;
+    }
+
+    #result {
+        font-size: 35px;
+    }
+}
